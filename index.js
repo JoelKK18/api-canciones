@@ -3,8 +3,12 @@ const express = require('express');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const sequelize = require('./db');
-const { User } = require('./models.js');
-const { Song } = require('./models.js');
+
+// IMPORTACIÓN CORREGIDA Y SEGURA:
+const models = require('./models.js');
+const User = models.User;
+const Song = models.Song;
+
 const authenticateToken = require('./authMiddleware');
 
 const app = express();
